@@ -16,3 +16,176 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+/* ========== Base ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  background: #fff;
+  color: #2e2f42;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========== Form (макет) ========== */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 36px 16px 32px;
+}
+
+.form label {
+  display: block;
+}
+
+.form input {
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: transparent;
+
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+
+  color: #2e2f42;
+  background: #fff;
+}
+
+.form input::placeholder {
+  color: #808080;
+}
+
+.form input:hover {
+  border-color: #000000;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form button {
+  width: 91px;
+  /* як на скріні */
+  height: 40px;
+  padding: 8px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #4e75ff;
+  color: #ffffff;
+
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.form button:hover {
+  background: #6c8cff;
+  /* hover з макету */
+}
+
+/* ========== Loader position ========== */
+.loader {
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* ========== Gallery Grid ========== */
+.gallery {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+  max-width: 1200px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+/* ========== Card (360x200 + stats 48) ========== */
+.gallery-item {
+  border: 1px solid #808080;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  /* 360x200 */
+  object-fit: cover;
+}
+
+/* нижній блок 360x48 */
+.info {
+  height: 48px;
+  /* як на скріні */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 14px;
+  border-top: 1px solid #808080;
+}
+
+/* 4 колонки */
+.info-item {
+  margin: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+
+  color: #2e2f42;
+}
+
+.info-item b {
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+/* легкий hover на картку (можна прибрати, але виглядає ок) */
+.gallery-item:hover {
+  border-color: #000;
+}
